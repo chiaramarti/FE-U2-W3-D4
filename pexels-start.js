@@ -88,4 +88,15 @@ window.onload = function () {
   secondaryButton.addEventListener("click", () => {
     getImages("mountains");
   });
+
+  let customInputField = document.querySelector(".input-group .form-control");
+  let customSearchButton = document.querySelector(".input-group .btn-outline-secondary");
+  customSearchButton.addEventListener("click", () => {
+    let searchTerm = customInputField.value.trim();
+    if (searchTerm !== "") {
+      getImages(searchTerm);
+    } else {
+      console.log("Please enter a valid search term.");
+    }
+  });
 };
